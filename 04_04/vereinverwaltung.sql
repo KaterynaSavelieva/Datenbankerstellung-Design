@@ -1,12 +1,11 @@
--- 
-DROP DATABASE vereinverwaltung;
+-- DROP DATABASE vereinverwaltung;
 CREATE DATABASE IF NOT EXISTS vereinverwaltung  DEFAULT CHARACTER SET utf8mb4  DEFAULT COLLATE utf8mb4_unicode_ci;
 USE vereinverwaltung;
 
 CREATE TABLE Trainer (
     trainer_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name   VARCHAR(50) NOT NULL,
-    gehalt DECIMAL (4,2)
+    gehalt DECIMAL (6,2)
 );
 
 CREATE TABLE Ausbildung (
