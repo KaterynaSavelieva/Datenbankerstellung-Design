@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `cd_datenbank` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `cd_datenbank`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: cd_datenbank
+-- Host: localhost    Database: cd
 -- ------------------------------------------------------
 -- Server version	8.0.43
 
@@ -18,27 +16,30 @@ USE `cd_datenbank`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `musikrichtung`
+-- Table structure for table `cd_titel`
 --
 
-DROP TABLE IF EXISTS `musikrichtung`;
+DROP TABLE IF EXISTS `cd_titel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `musikrichtung` (
-  `MRID` int unsigned NOT NULL AUTO_INCREMENT,
-  `Musikrichtung` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MRID`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `cd_titel` (
+  `CDNr` int unsigned NOT NULL,
+  `TitelNr` int unsigned NOT NULL,
+  PRIMARY KEY (`CDNr`,`TitelNr`),
+  KEY `TitelNr` (`TitelNr`),
+  CONSTRAINT `cd_titel_ibfk_1` FOREIGN KEY (`CDNr`) REFERENCES `cd` (`CDNr`),
+  CONSTRAINT `cd_titel_ibfk_2` FOREIGN KEY (`TitelNr`) REFERENCES `titel` (`TitelNr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `musikrichtung`
+-- Dumping data for table `cd_titel`
 --
 
-LOCK TABLES `musikrichtung` WRITE;
-/*!40000 ALTER TABLE `musikrichtung` DISABLE KEYS */;
-INSERT INTO `musikrichtung` VALUES (1,'Pop'),(2,'Rock'),(3,'Metal'),(4,'Hip-Hop'),(5,'Rap'),(6,'Classical'),(7,'EDM'),(8,'Jazz'),(9,'Blues'),(10,'Folk'),(11,'Indie'),(12,'K-Pop'),(13,'R&B'),(14,'Soul'),(15,'Reggae'),(16,'House'),(17,'Techno'),(18,'Alternative'),(19,'Country'),(20,'Soundtrack'),(21,'Classic'),(22,'deutsche Schlager');
-/*!40000 ALTER TABLE `musikrichtung` ENABLE KEYS */;
+LOCK TABLES `cd_titel` WRITE;
+/*!40000 ALTER TABLE `cd_titel` DISABLE KEYS */;
+INSERT INTO `cd_titel` VALUES (1,1),(1,2),(2,3),(2,4),(3,5),(3,6),(3,7),(4,8),(4,9),(4,10),(5,11),(5,12),(1,13),(2,14),(10,50);
+/*!40000 ALTER TABLE `cd_titel` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-24 11:00:24
+-- Dump completed on 2025-11-25  9:38:44

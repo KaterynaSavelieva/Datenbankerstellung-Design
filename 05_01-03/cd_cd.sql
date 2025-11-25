@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `cd_datenbank` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `cd_datenbank`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: cd_datenbank
+-- Host: localhost    Database: cd
 -- ------------------------------------------------------
 -- Server version	8.0.43
 
@@ -27,14 +25,14 @@ DROP TABLE IF EXISTS `cd`;
 CREATE TABLE `cd` (
   `CDNr` int unsigned NOT NULL AUTO_INCREMENT,
   `CDName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `IntNr` int unsigned DEFAULT NULL,
+  `IntNr` int unsigned NOT NULL,
   `MRNr` int unsigned DEFAULT NULL,
   PRIMARY KEY (`CDNr`),
   KEY `IntNr` (`IntNr`),
   KEY `MRNr` (`MRNr`),
   CONSTRAINT `cd_ibfk_1` FOREIGN KEY (`IntNr`) REFERENCES `interpreten` (`InterpretID`),
   CONSTRAINT `cd_ibfk_2` FOREIGN KEY (`MRNr`) REFERENCES `musikrichtung` (`MRID`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +41,7 @@ CREATE TABLE `cd` (
 
 LOCK TABLES `cd` WRITE;
 /*!40000 ALTER TABLE `cd` DISABLE KEYS */;
-INSERT INTO `cd` VALUES (1,'Golden Melodies',1,1),(2,'Night Waves',2,7),(3,'Electric Heart',3,13),(4,'Skyline Dreams',4,11),(5,'Thunder Beats',5,2),(6,'Feuer & Flamme',6,3),(7,'Black Strings',7,9),(8,'Midnight Stories',8,14),(9,'Urban Nights',9,4),(10,'Broken Silence',10,18),(11,'Flow State',11,5),(12,'Shining Star',12,1),(13,'Revival',13,4),(14,'Energy Rush',14,7),(15,'Wild Motion',15,2),(16,'City Lights',16,11),(17,'Sugar Waves',17,1),(18,'Blue Horizon',18,10),(19,'Dark Bloom',19,18),(20,'Pure Emotion',20,19);
+INSERT INTO `cd` VALUES (1,'Parachutes',1,2),(2,'21',2,1),(3,'Divide',3,1),(4,'Mutter',4,4),(5,'Best of Mozart',5,3),(10,'Black Strings',10,10);
 /*!40000 ALTER TABLE `cd` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-24 11:00:24
+-- Dump completed on 2025-11-25  9:22:43

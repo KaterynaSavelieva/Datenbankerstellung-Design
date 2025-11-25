@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `cd_datenbank` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `cd_datenbank`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: cd_datenbank
+-- Host: localhost    Database: cd
 -- ------------------------------------------------------
 -- Server version	8.0.43
 
@@ -28,7 +26,7 @@ CREATE TABLE `interpreten` (
   `InterpretID` int unsigned NOT NULL AUTO_INCREMENT,
   `Interpret` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`InterpretID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +35,7 @@ CREATE TABLE `interpreten` (
 
 LOCK TABLES `interpreten` WRITE;
 /*!40000 ALTER TABLE `interpreten` DISABLE KEYS */;
-INSERT INTO `interpreten` VALUES (1,'Adele'),(2,'Ed Sheeran'),(3,'Beyoncé'),(4,'Coldplay'),(5,'Imagine Dragons'),(6,'Rammstein'),(7,'Metallica'),(8,'Taylor Swift'),(9,'The Weeknd'),(10,'Linkin Park'),(11,'Drake'),(12,'Lady Gaga'),(13,'Eminem'),(14,'Shakira'),(15,'Sia'),(16,'OneRepublic'),(17,'Maroon 5'),(18,'U2'),(19,'Billie Eilish'),(20,'Sam Smith');
+INSERT INTO `interpreten` VALUES (1,'Coldplay'),(2,'Adele'),(3,'Ed Sheeran'),(4,'Rammstein'),(5,'Wolfgang Amadeus Mozart'),(10,'Black Strings Band');
 /*!40000 ALTER TABLE `interpreten` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-24 11:00:24
+-- Dump completed on 2025-11-25  9:38:44
